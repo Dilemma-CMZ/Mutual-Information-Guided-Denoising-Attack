@@ -6,6 +6,7 @@
 > 
 > In this paper, we introduce the Mutual Information Guided Denoising Attack (MIGDA), a novel adversarial method that strategically manipulates semantic features during denoising by reducing mutual information between the original and denoised images. MIGDA applies imperceptible perturbations to the input image, which, after being processed by the denoising model, results in visually high-quality output. Simultaneously, this output has its semantic content selectively altered, deceiving both downstream models and human observers, ultimately leading to incorrect decisions. Extensive experiments with our tailored evaluation metrics for assessing semantic preservation in denoised images show that our method effectively attacks the semantic consistency during the denoising process. This results in denoised images that mislead downstream tasks while maintaining high visual quality.
 ![example2](main_un.jpg)
+
 ## Installation
 1. **Clone the Repository**:
 
@@ -109,14 +110,6 @@ Prepare your datasets for the attack:
         - `restored_original.png`: The output of the denoising model on the original image.
         - `restored_perturbed.png`: The output of the denoising model on the perturbed image.
         - `log.txt`: Log file containing loss information during optimization.
-
-### Acknowledgements
-
-- **Restormer**: [Github Repository](https://github.com/swz30/Restormer)
-- **VGG16**: Pretrained model from PyTorch's model zoo.
-- **MINE Model**: Implementation of Mutual Information Neural Estimation.
-
-
 
 ## License
 
