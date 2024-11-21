@@ -67,12 +67,10 @@ Prepare your datasets for the attack:
 1. **Original Images**:
 
     - Place your original images in a folder (e.g., `/path/to/original_images/`).
-    - The images should be named numerically starting from `1` (e.g., `1.png`, `2.png`, ...).
 
 2. **Target Images**:
 
     - Place your target images in a folder (e.g., `/path/to/target_images/`).
-    - Ensure the target images correspond to the original images by name.
 
 
 ### Usage
@@ -115,7 +113,7 @@ Prepare your datasets for the attack:
 1. **Install Basicsr**:
 
     ```bash
-    cd known-Task
+    cd Known-Task
     python setup.py develop --no_cuda_ext
     ```
 
@@ -156,14 +154,7 @@ we have 10 subfolders which correspond to 10 classes of the dataset. Directly pu
     Execute the attack script:
 
     ```bash
-    cd known-Task
+    cd Known-Task
     python Attack.py
 
     ```
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-**Disclaimer**: This code is for research purposes only. Use responsibly and ensure compliance with relevant laws and ethical guidelines.
