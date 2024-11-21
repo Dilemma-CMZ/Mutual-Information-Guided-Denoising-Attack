@@ -51,13 +51,9 @@ The attack generates perturbed images that, when processed by the denoising mode
 Download the pretrained models and place them in the appropriate directories:
 
 1. **Restormer Pretrained Model**:
-
-    - Download the model from [here](https://drive.google.com/drive/folders/1Qwsjyny54RZWa7zC4Apg7exixLBo4uF0?usp=sharing).
     - Place the downloaded `.pth` file in the `./pretrained_models/` directory.
 
 2. **VGG16 Pretrained Model**:
-
-    - Download the model from [here](https://download.pytorch.org/models/vgg16-397923af.pth).
     - Place the downloaded `.pth` file in the `./pretrained_models/` directory.
 
 3. **MINE Model**:
@@ -97,6 +93,7 @@ Prepare your datasets for the attack:
     Execute the attack script:
 
     ```bash
+    cd Unknown-Task
     python Attack.py
     ```
 
@@ -111,6 +108,58 @@ Prepare your datasets for the attack:
         - `restored_perturbed.png`: The output of the denoising model on the perturbed image.
         - `log.txt`: Log file containing loss information during optimization.
 
+## Known Task
+
+### Installation
+
+1. **Install Basicsr**:
+
+    ```bash
+    cd known-Task
+    python setup.py develop --no_cuda_ext
+    ```
+
+### Pretrained Models
+
+Download the pretrained models and place them in the appropriate directories:
+
+1. **Restormer Pretrained Model**:
+    - Place the downloaded `.pth` file in the `./pretrained_models/` directory.
+
+2. **VGG16 Pretrained Model**:
+    - Place the downloaded `.pth` file in the `./pretrained_models/` directory.
+
+3. **Resnet50 Model**:
+
+    - Ensure you have the `Resnet50.pth` file in the root directory (same level as `Attack.py`).
+
+### Dataset Preparation
+
+Prepare your datasets for the attack:
+we have 10 subfolders which correspond to 10 classes of the dataset. Directly put the images in the corresponding subfolders. (e.g., `/path/to/original_images/n02056570/1.png`).
+
+### Usage
+
+1. **Set the Paths**:
+
+    Open `Attack.py` and modify the following variables to point to your datasets:
+
+    ```python
+    original_folder = '/path/to/original_images'
+    target_folder = '/path/to/target_images'
+    result_folder = '/path/to/save_results'
+    batch_size = 16  # Adjust as needed
+    ```
+
+2. **Run the Attack**:
+
+    Execute the attack script:
+
+    ```bash
+    cd known-Task
+    python Attack.py
+
+    ```
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
