@@ -8,10 +8,9 @@
 ![example2](main_un.jpg)
 
 ## Installation
-1. **Clone the Repository**:
+1. **Get the Repository**:
 
     ```bash
-    git clone git@github.com:Dilemma-CMZ/Mutual-Information-Guided-Denoising-Attack.git
     cd Mutual-Information-Guided-Denoising-Attack
     ```
 
